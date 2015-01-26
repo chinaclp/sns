@@ -11,6 +11,22 @@ end
 
 module Sns
   class Application < Rails::Application
+
+    config.action_mailer.raise_delivery_errors = true
+
+    config.action_mailer.default_url_options = { :host => "localhost:3000" }
+
+    config.action_mailer.delivery_method = :smtp
+
+    config.action_mailer.smtp_settings = {
+       :address => "smtp.qq.com",  #smtp.qq.com
+       :port => 25,
+       :domain => "qq.com",   #qq.com
+       :authentication => :login,
+       :user_name => "1048900587@qq.com", #修
+       :password => "123456abc" #修改正确的密码
+    } 
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
