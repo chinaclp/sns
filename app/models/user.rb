@@ -10,7 +10,10 @@ class User < ActiveRecord::Base
     self.confirmed_at = Time.now
   end
 
+  has_many :user_users
+  has_many :users, :through => :user_users, :source => :user
+
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :phone
   # attr_accessible :title, :body
 end
