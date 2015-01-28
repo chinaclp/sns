@@ -5,12 +5,13 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 gem 'mysql2'
 
+gem 'kaminari'         #分页 
 
 group :development do
-  gem 'thin'
+  gem 'quiet_assets'   #过滤日志 
+  gem 'thin'           #rails启动服务
 end
 
 gem 'devise'
