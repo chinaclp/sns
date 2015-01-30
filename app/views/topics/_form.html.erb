@@ -1,0 +1,26 @@
+<%= form_for(@topic) do |f| %> 
+  <% if @topic.errors.any? %>  
+    <div id="errorExplanation">
+      <h2><%= pluralize(@topic.errors.count, "error") %> prohibited this topic from being saved:</h2>  
+      <ul>  
+        <% @topic.errors.full_messages.each do |msg| %>  
+          <li><%= msg %></li>  
+        <% end %>  
+      </ul>  
+    </div>  
+  <% end %>
+
+  <div class="field">  
+    <%= f.label "标题" %><br />  
+    <%= f.text_field :title %>  
+  </div>
+
+  <div class="field">  
+    <%= f.label "内容" %><br />  
+    <%= f.ueditor_text :content %>  
+  </div>
+
+  <div class="actions">  
+    <%= f.submit "提交"%>  
+  </div>  
+<% end %> 

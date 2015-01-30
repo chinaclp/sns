@@ -1,0 +1,25 @@
+<p>                                                                                  
+<b>标题：</b>
+<%= @article.title %>
+</p> 
+
+<p>
+<b>作者：</b>
+<% if @article.user %>
+  <%= link_to @article.user.name, user_path(:id => @article.user.id ) %>
+<% end %>
+</p> 
+
+<p>
+<b>摘要：</b>
+<%= @article.summary %>
+</p>
+
+<p>
+<b>内容：</b>
+<%= @article.content.html_safe %>
+</p> 
+
+<%= link_to '修改',edit_article_path(@article)  %>
+<%= link_to '返回文章主页面',articles_path%>
+<%= link_to '返回主页面',root_path%> 

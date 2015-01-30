@@ -9,6 +9,8 @@ gem 'mysql2'
 
 gem 'kaminari'         #分页 
 
+gem 'ueditor_rails'    #副文本编辑器
+
 group :development do
   gem 'quiet_assets'   #过滤日志 
   gem 'thin'           #rails启动服务

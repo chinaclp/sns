@@ -3,7 +3,11 @@ class TopicsController < ApplicationController
   before_filter :per_load 
 
   def index
-    @topics = Topic.order("id desc").page(params[:page]).per(10)
+    if params[:content].blank?
+      @topics = Topic.order('id desc').page(params[:page]).per(5)
+    elsif
+      @topics = Topic.where("title like ? or content like ? ", "%#{params[:content]}%", "%#{params[:content]}%")
+    end
   end
 
   def new

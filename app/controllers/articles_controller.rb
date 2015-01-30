@@ -3,7 +3,11 @@ class ArticlesController < ApplicationController
   before_filter :per_load 
 
   def index
-    @articles = Article.order("id desc").page(params[:page]).per(10)
+    if params[:content].blank?
+      @articles = Article.order('id desc').page(params[:page]).per(5)
+    elsif
+      @articles = Article.where("title like ? or summary like ? or content like ? ", "%#{params[:content]}%","%#{params[:content]}%", "%#{params[:content]}%")
+    end
   end
 
   def new
@@ -12,6 +16,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(params[:article])
+    @article.user_id = current_user.id
     if @article.save
       redirect_to :action =>:index
     else

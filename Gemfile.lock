@@ -117,6 +117,9 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.42)
+    ueditor_rails (0.0.4)
+      jquery-rails
+      rails (~> 3.2.1)
     uglifier (2.7.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
@@ -136,4 +139,5 @@ DEPENDENCIES
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)
   thin
+  ueditor_rails
   uglifier (>= 1.0.3)

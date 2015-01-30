@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
     self.confirmed_at = Time.now
   end
 
+  has_many :articles
+  has_many :topics
+
   has_many :user_users
   has_many :users, :through => :user_users, :source => :user
 
