@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150128091954) do
+ActiveRecord::Schema.define(:version => 20150202021829) do
 
   create_table "articles", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(:version => 20150128091954) do
   create_table "user_users", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.integer  "user_id"
+    t.integer  "fan_id"
     t.integer  "grade"
   end
 
