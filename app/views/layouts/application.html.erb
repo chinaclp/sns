@@ -5,10 +5,60 @@
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 50px;
+        padding-left: 50px;
+      }
+    </style>
   </head>
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div class="container-fluid">
+
+      <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">微微微博</a>
+        </div>
+
+
+        <div>
+          <div> 
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#"><span class="glyphicon glyphicon-home">首页</span></a></li>
+              <li><a href="#shop"><span class="glyphicon glyphicon-search">发现</span></a></li>
+              <li><a href="#support"><span class="glyphicon glyphicon-user">china_cheng</span></a></li>
+            </ul>
+          </div> 
+          <div> 
+            <ul class="nav navbar-nav">
+              <li><a href="#support"><span class="glyphicon glyphicon-wrench"></span></a></li>
+              <li><a href="#support"><span class="glyphicon glyphicon-send"></span></a></li>
+            </ul>
+          </div> 
+        </div>
+
+        <div> 
+          <form class="form-search">
+            <input class="input-medium search-query" type="text" /> <button type="submit" class="btn">查找</button>
+          </form>   
+        </div> 
+
+      </div>
+
+      <div class="row-fluid">
+        <div class="span12">
+          <%= yield %>
+        </div>
+      </div>
+
+      <div class="row-fluid">
+        <div class="span12">
+        </div>
+      </div>
+
+    </div>
   </body>
 </html>
