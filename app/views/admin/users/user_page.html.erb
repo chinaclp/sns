@@ -1,0 +1,29 @@
+<table align="left">
+  <thead>
+    <tr width="793px">
+      <th class="title">标题</th>
+      <th class="summary">摘要</th>
+      <th class="name">作者</th>
+    </tr>
+  </thead>
+
+  <tbody> 
+    <% @articles.each do |article| %>
+      <tr>
+        <td align="center">
+          <%= link_to article.title, article_path(:id => article.id) %>
+        </td>
+        <td ><%= article.summary %></td>
+        <td align="center"><%= link_to article.user.name, admin_user_path(:id => article.user_id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table align="right"> 
+<div> 
+  <%= current_user.name %>  
+  <%= current_user.email %>  
+</div> 
+</table> 
+

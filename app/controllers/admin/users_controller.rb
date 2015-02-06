@@ -1,7 +1,7 @@
 class Admin::UsersController < ApplicationController
   
   def user_page
-    @user = Current_user
+    @articles = Article.order('id desc').page(params[:page]).per(5)
   end
 
   def index
@@ -15,6 +15,7 @@ class Admin::UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
+    @articles = Article.where(user_id: params[:id]).page(params[:page]).per(20)
   end
 
   def edit

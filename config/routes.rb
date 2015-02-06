@@ -3,20 +3,24 @@ Sns::Application.routes.draw do
 
   resources :home
   resources :user_users
-  resources :users do 
-    member do
-      get 'user_page'
-    end  
-  end
 
   resources :articles
   resources :topics
-  
+  resources :users do
+    member do
+      get 'user_page'
+    end
+  end
+
   namespace :admin do
     match "start_super/new",    :controller=>:start_super, :action=>:new
     match "start_super/create", :controller=>:start_super, :action=>:create, :via=>"post"
     match "start_super/destroy",:controller=>:start_super, :action=>:destroy, :via=>"delete"
-    resources :users
+    resources :users do
+      member do
+        get 'user_page'
+      end
+    end
   end
 
   # The priority is based upon order of creation:

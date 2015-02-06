@@ -27,9 +27,9 @@
         <div>
           <div> 
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#"><span class="glyphicon glyphicon-home">首页</span></a></li>
+              <li class="active"><span class="glyphicon glyphicon-home"><%= link_to "首页", user_page_admin_user_path(:id => current_user.id) %>首页</span></li>
               <li><a href="#shop"><span class="glyphicon glyphicon-search">发现</span></a></li>
-              <li><a href="#support"><span class="glyphicon glyphicon-user">china_cheng</span></a></li>
+              <li><a href="#support"><span class="glyphicon glyphicon-user"><%= current_user.name %></span></a></li>
             </ul>
           </div> 
           <div> 
@@ -49,14 +49,10 @@
       </div>
 
       <div class="row-fluid">
-        <div class="span12">
           <%= yield %>
-        </div>
       </div>
 
       <div class="row-fluid">
-        <div class="span12">
-        </div>
       </div>
 
     </div>
